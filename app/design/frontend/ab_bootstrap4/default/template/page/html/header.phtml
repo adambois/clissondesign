@@ -1,0 +1,128 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     base_default
+ * @copyright   Copyright (c) 2006-2017 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+/**
+ * @var Mage_Page_Block_Html_Header $this
+ */
+?>
+
+<!-- TopBar -->
+<section id="topbar">
+  <div class="container">
+    <div class="row">
+      <div class="hidden-sm-down col-md-6">
+        <p class="welcome-msg"><?php echo $this->getWelcome() ?> <?php echo $this->getAdditionalHtml() ?></p>
+      </div>
+      <div class="user-links col-12 col-md-6">
+        <ul>
+          <li class="user-home hidden-md-up">
+            <a class="active"><i class="fa fa-home"></i></a>
+          </li>
+          <li class="user-search">
+            <a href="#">
+              <i class="fa fa-search"></i>
+            </a>
+            <!-- <?php echo $this->getChildHtml('topSearch') ?> -->
+          </li>
+          <li class="user-account">
+            <a href="#">
+              <i class="fa fa-user-circle-o"></i>
+            <span class="hidden-sm-down">My Account</span>
+            </a>
+            <!-- <?php echo $this->getChildHtml('topLinks') ?> -->
+          </li>
+          <li class="hidden-md-up user-shopping-bag">
+            <a>
+              <i class="fa fa-opencart"></i>
+            </a>
+            <?php echo $this->getChildHtml('topCart') ?>
+          </li>
+          <li class="currency-switcher hidden-sm-down">
+            <?php echo $this->getChildHtml('currency_switcher') ?>
+          </li>
+          <li class="user-language hidden-sm-down">
+            <?php echo $this->getChildHtml('store_language') ?>
+          </li>
+          <li class="hidden-sm-down">
+            <?php echo $this->getChildHtml('socialMedia') ?>
+          </li>
+          <li class="user-nav hidden-md-up">
+            <div class="hamburger"><span></span></div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Header -->
+<section id="header">
+  <div class="container">
+    <div class="header-content row">
+      <div class="header-logo col-sm-12 col-md-4">
+        <?php if ($this->getIsHomePage()):?>
+        <h1 class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a></h1>
+        <?php else:?>
+        <a href="<?php echo $this->getUrl('') ?>" title="<?php echo $this->getLogoAlt() ?>" class="logo"><strong><?php echo $this->getLogoAlt() ?></strong><img src="<?php echo $this->getLogoSrc() ?>" alt="<?php echo $this->getLogoAlt() ?>" /></a>
+        <?php endif?>
+      </div>
+      <div class="header-phone col-sm-12 col-md-4">
+        <p class="contact-phone">
+          <i class="fa fa-phone"></i>
+          <span><?php echo Mage::getStoreConfig('general/store_information/phone'); ?></span>
+        </p>
+        <p class="contact-store-hours"><?php echo Mage::getStoreConfig('general/store_information/hours'); ?></p>
+      </div>
+      <div class="header-socialMedia hidden-sm-down col-sm-12 col-md-4">
+        <div class="topCart">
+          <div class="topCartIcon">
+            <i class="fa fa-opencart"></i>
+          </div>
+          <div class="topCartInfo">
+            <a><span class="hidden-sm-down">0 Items</span></a>
+            <?php echo $this->getChildHtml('topCart') ?>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Navigation -->
+<nav class="navbar navbar-toggleable-md" role="navigation">
+  <div class="container">
+    <?php echo $this->getChildHtml('topMenu') ?>
+    <div class="dimmer"></div>
+  </div>
+</nav>
+
+<!-- Global Banner -->
+<section id="globalBanner">
+  <div class="container">
+    <div class="row">
+      <?php echo $this->getChildHtml('globalBanner') ?>
+    </div>
+  </div>
+</section>

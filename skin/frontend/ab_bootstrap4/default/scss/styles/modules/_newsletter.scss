@@ -1,0 +1,32 @@
+#newsletter {
+  h4 {
+    position: relative;
+    font-weight: normal;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    margin-bottom: 30px;
+    // &:before {
+    //   background: $brand-primary;
+    //   content: "";
+    //   display: block;
+    //   height: 1px;
+    //   position: absolute;
+    //   top: 50%;
+    //   width: 100%;
+    //   left: 0;
+    // }
+    // span {
+    //   background: #fff;
+    //   padding: 0 20px;
+    //   position: relative;
+    //   z-index: 1;
+    // }
+  }
+  .btn {
+    width: 100%;
+    text-transform: uppercase;
+    border-color: white;
+    color: white;
+  }
+}

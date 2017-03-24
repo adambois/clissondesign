@@ -1,0 +1,44 @@
+.mobileLinks {
+  background-color: $gray-light;
+  li {
+    border-bottom: 1px solid $gray-lighter;
+    color: white;
+    a {
+      color: white;
+      display: block;
+      position: relative;
+      line-height: 65px;
+      text-transform: uppercase;
+      padding-left: 30px;
+      letter-spacing: 0.025em;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &.mobileStoreNumber {
+      display: block;
+      position: relative;
+      line-height: 65px;
+      padding-left: 30px;
+      letter-spacing: 0.025em;
+    }
+  }
+}
+
+.mobileSocialMedia {
+  ul.socialIcons {
+      background-color: $gray-light;
+    li {
+      display: block;
+      width: 25%;
+      float: left;
+      a {
+        color: white;
+        line-height: 65px;
+      }
+    }
+  }
+  @include media-breakpoint-up(md) {
+    display: none;
+  }
+}

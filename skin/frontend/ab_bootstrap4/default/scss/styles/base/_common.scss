@@ -1,0 +1,60 @@
+/* Common Styles */
+
+h1, h2, h3, h4, h5 {
+  font-family: $font-family-serif;
+  text-transform: uppercase;
+}
+
+h4 {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+
+.section-title {
+      margin-bottom: 30px;
+  h2 {
+    color: $gray-dark;
+    text-align: center;
+    margin: 0;
+    position: relative;
+    &:before {
+      background: $brand-primary;
+      content: "";
+      display: block;
+      height: 1px;
+      position: absolute;
+      top: 50%;
+      width: 100%;
+      left: 0;
+    }
+    span {
+      background: #fff;
+      padding: 0 20px;
+      position: relative;
+      z-index: 1;
+    }
+  }
+}
+
+ul {
+  padding-left: 0;
+  margin: 0;
+}
+
+.flex-center-vertically {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 400px;
+}
+
+main {
+  padding: 60px 0;
+}
+
+@include media-breakpoint-down(sm) {
+  .container {
+    width: 100%;
+  }
+}

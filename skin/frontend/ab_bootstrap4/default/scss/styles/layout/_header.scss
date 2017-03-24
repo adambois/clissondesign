@@ -1,0 +1,183 @@
+/* Header Styles */
+
+#topbar {
+  box-shadow: 0 2px 2px -2px rgba(0,0,0,0.44);
+  .container-fluid {
+    padding: 0;
+  }
+  .user-links {
+    width: 100%;
+    text-align: center;
+    background-color: $gray;
+    overflow: auto;
+    line-height: 45px;
+    padding: 0;
+    @include media-breakpoint-up(md) {
+      background-color: white;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        width: 20%;
+        float: left;
+        display: block;
+        @include media-breakpoint-up(md) {
+          width: auto;
+          display: inline-block;
+          float: none;
+        }
+        a {
+          transition: all 0.3s ease;
+          color: white;
+          font-size: 36px;
+          padding: 10px 15px;
+          display: block;
+          @include media-breakpoint-up(md) {
+            color: $gray-dark;
+            font-size: 16px;
+          }
+          i {
+            @include media-breakpoint-up(md) {
+              color: $brand-primary;
+              font-size: 24px;
+            }
+          }
+          &:hover {
+            background-color: $gray;
+            @include media-breakpoint-up(md) {
+              background-color: white;
+            }
+          }
+          &.active {
+            background-color: $brand-primary !important;
+          }
+        }
+      }
+    }
+  }
+  .hamburger {
+    display: inline-block;
+    position: relative;
+    color: white;
+    cursor: pointer;
+    z-index:2;
+    span,
+    span:before,
+    span:after {
+      border-radius: 2px;
+      height: 6px;
+      width: 40px;
+      background: white;
+      position: absolute;
+      display: block;
+      content: '';
+      transition: all .5s ease-in-out;
+      left: 50%;
+      -webkit-transform: translateX(-50%);
+      transform: translateX(-50%);
+      top: 3px;
+    }
+    span:before {
+      top: -14px;
+    }
+    span:after {
+      top: 14px;
+    }
+    &.active {
+      span {
+        background-color: transparent;
+      }
+      span:before,
+      &.active span:after {
+        top: 0;
+      }
+      span:before {
+        transform: rotate(-45deg);
+        left: 0;
+      }
+      span:after {
+        transform: rotate(45deg);
+        left: 0;
+      }
+    }
+  }
+  .topbar-dropdown {
+    display: none;
+  }
+}
+
+#header {
+  padding: 30px 0;
+  @include media-breakpoint-up(md) {
+    padding-bottom: 0;
+  }
+  .header-content {
+    text-align: center;
+  }
+  .header-logo {
+    .logo {
+      text-align: center;
+      img {
+        width: auto;
+        height: 140px;
+      }
+    }
+    strong {
+      font: 0/0 a;
+      color: transparent;
+      text-shadow: none;
+      background-color: transparent;
+      border: 0;
+    }
+    @include media-breakpoint-up(md) {
+      margin: auto;
+      order: 1;
+    }
+  }
+  .header-phone {
+    font-size: 20px;
+    p {
+      margin: 0;
+    }
+    i {
+      color: $brand-primary;
+    }
+    .contact-store-hours {
+      font-size: 14px;
+    }
+    @include media-breakpoint-up(md) {
+      margin: auto;
+      order: 0;
+    }
+  }
+  .header-socialMedia {
+    @include media-breakpoint-up(md) {
+      margin: auto;
+      order: 2;
+    }
+  }
+  .topCart {
+    border: 1px solid $gray-lighter;
+    line-height: 50px;
+    border-radius: 5px;
+    float: right;
+    padding: 0 30px;
+    color: $gray-light;
+    .topCartIcon {
+      display: inline-block;
+      i {
+        padding-right: 12px;
+        font-size: 24px;
+        color: $brand-primary;
+      }
+    }
+    .topCartInfo {
+      display: inline-block;
+      a {
+        border-left: 1px solid $gray-lighter;
+        padding-left: 15px;
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+/* Social Icons Styles */
+
+ul.socialIcons {
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  overflow: auto;
+  text-align: center;
+  li {
+    display: inline-block;
+    a {
+      transition: all 0.3s ease;
+      color: #af938b;
+      font-size: 32px;
+      padding: 0 10px;
+      display: block;
+      &:hover {
+        color: #deb656;
+      }
+    }
+  }
+}

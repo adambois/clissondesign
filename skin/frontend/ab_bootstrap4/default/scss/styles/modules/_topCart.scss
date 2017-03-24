@@ -1,0 +1,26 @@
+/* Top Cart Styles */
+
+.block-topcart {
+  display: none;
+  padding: 15px;
+  position: absolute;
+  background: white;
+  width: 100%;
+  left: 0;
+  z-index: 99;
+  border-bottom: 1px solid grey;
+  .block-title {
+    font-size: 15px;
+    margin-bottom: 5px;
+  }
+  p {
+    &.empty {
+      font-size: 12px;
+      color: #666666;
+      font-style: italic;
+    }
+  }
+  .block-content {
+    display: none;
+  }
+}

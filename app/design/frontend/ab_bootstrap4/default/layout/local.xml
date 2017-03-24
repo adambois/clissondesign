@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout>
+  <default>
+
+   <reference name="head">
+      <action method="addItem"><type>skin_css</type><name>css/styles.css</name><params/></action>
+      <action method="addItem"><type>skin_js</type><name>js/jquery-3.1.1.min.js</name><params/></action>
+      <action method="addItem"><type>skin_js</type><name>js/tether.min.js</name><params/></action>
+      <action method="addItem"><type>skin_js</type><name>js/bootstrap/bootstrap.min.js</name><params/></action>
+      <action method="addItem"><type>skin_js</type><name>js/customJs.js</name><params/></action>
+
+      <!-- Microsoft rendering fixes -->
+        <block type="core/text" name="ie_rendering_fixes">
+          <action method="setText">
+            <text><![CDATA[
+              <meta http-equiv="X-UA-Compatible" content="IE=edge">
+              <meta name="viewport" content="width=device-width, initial-scale=1">
+              <meta http-equiv="cleartype" content="on">
+            ]]></text>
+          </action>
+        </block>
+
+        <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/css?family=Amiri:400,700</href></action>
+        <action method="addLinkRel"><rel>stylesheet</rel><href>//fonts.googleapis.com/icon?family=Material+Icons</href></action>
+
+    </reference>
+
+    <reference name="header">
+
+      <block type="cms/block" name="socialMedia" as="socialMedia">
+        <action method="setBlockId">
+          <block_id>socialMedia</block_id>
+        </action>
+      </block>
+
+      <block type="cms/block" name="globalBanner" as="globalBanner">
+        <action method="setBlockId">
+          <block_id>globalBanner</block_id>
+        </action>
+      </block>
+
+      <block type="checkout/cart_sidebar" name="topCart" template="checkout/cart/topCart.phtml" before="-">
+        <action method="addItemRender">
+          <type>simple</type>
+          <block>checkout/cart_item_renderer</block>
+          <template>checkout/cart/sidebar/default.phtml</template>
+        </action>
+
+        <action method="addItemRender">
+          <type>grouped</type>
+          <block>checkout/cart_item_renderer_grouped</block>
+          <template>checkout/cart/sidebar/default.phtml</template>
+        </action>
+
+        <action method="addItemRender">
+          <type>configurable</type>
+          <block>checkout/cart_item_renderer_configurable</block>
+          <template>checkout/cart/sidebar/default.phtml</template>
+        </action><block type="core/text_list" name="cart_sidebar.extra_actions" as="extra_actions" translate="label" module="checkout">
+
+        <label>Shopping Cart Sidebar Extra Actions</label></block>
+      </block>
+
+      <block type="directory/currency" name="currency" as="currency_switcher" template="directory/currency.phtml"/>
+
+    </reference>
+
+    <reference name="catalog.topnav">
+      <block type="cms/block" name="mobileLinks" as="mobileLinks">
+        <action method="setBlockId">
+          <block_id>mobileLinks</block_id>
+        </action>
+      </block>
+    </reference>
+
+    <reference name="footer">
+
+      <block type="cms/block" name="socialMedia" as="socialMedia">
+        <action method="setBlockId">
+          <block_id>socialMedia</block_id>
+        </action>
+      </block>
+      <block type="cms/block" name="footerCompany" as="footerCompany">
+        <action method="setBlockId">
+          <block_id>footerCompany</block_id>
+        </action>
+      </block>
+      <block type="cms/block" name="footerLinks" as="footerLinks">
+        <action method="setBlockId">
+          <block_id>footerLinks</block_id>
+        </action>
+      </block>
+      <block type="cms/block" name="footerNewsletter" as="footerNewsletter">
+        <action method="setBlockId">
+          <block_id>footerNewsletter</block_id>
+        </action>
+      </block>
+      <block type="cms/block" name="footerCards" as="footerCards">
+        <action method="setBlockId">
+          <block_id>footerCards</block_id>
+        </action>
+      </block>
+
+    </reference>
+
+    <reference name="left">
+      <remove name="left.newsletter"/>
+    </reference>
+  </default>
+
+  <!-- <cms_index_index>
+      <reference name="root">
+          <block type="adsmage_cmspagelayouts/homepageslider" name="homepageslider" as="homepageslider" template="layout/blocks/homepage_slider.phtml" />
+      </reference>
+  </cms_index_index> -->
+
+</layout>
